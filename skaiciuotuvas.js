@@ -107,10 +107,15 @@ document.querySelector('#ar_trikampis').addEventListener('click', function(){
     let skaicius2 = parseFloat(document.querySelector('#skaicius2').value);
     let skaicius3 = parseFloat(document.querySelector('#skaicius3').value);
 
-    if(skaicius1 + skaicius2 > skaicius3 && skaicius1 + skaicius3 > skaicius2 && skaicius2 + skaicius3 > skaicius1) {
-        document.querySelector('#papildoma_informacija').value = ('Taip, toks trikampis gali egzistuoti');
+    if(skaicius1 + skaicius2 > skaicius3 && skaicius1 + skaicius3 > skaicius2 && skaicius2 + skaicius3 > skaicius1 && skaicius1 != skaicius2 && skaicius1 != skaicius3 && skaicius2 != skaicius3) {
+        document.querySelector('#papildoma_informacija').value = ('Taip. Trikampis yra ivairiakrastis.');
+    } else if(skaicius1 + skaicius2 > skaicius3 && skaicius1 + skaicius3 > skaicius2 && skaicius2 + skaicius3 > skaicius1 && skaicius1 == skaicius2 && skaicius1 != skaicius3 || skaicius1 == skaicius3 && skaicius1 != skaicius2 || skaicius2 == skaicius3 && skaicius2 != skaicius3) {
+        document.querySelector('#papildoma_informacija').value = ('Taip. Trikampis yra lygiasonis.');
+    } else if(skaicius1 + skaicius2 > skaicius3 && skaicius1 + skaicius3 > skaicius2 && skaicius2 + skaicius3 > skaicius1 && skaicius1 == skaicius2 && skaicius2 == skaicius3) {
+        document.querySelector('#papildoma_informacija').value = ('Taip. Trikampis yra lygiakrastis.');
     } else {
-        document.querySelector('#papildoma_informacija').value = ('Ne, toks trikampis neegzistuoja');
+        document.querySelector('#papildoma_informacija').value = ('Ne, toks trikampis neegzistuoja.');
     }
-
+    
+   // document.querySelector('#papildoma_informacija').value = (ar_trikampis + trikampio_rusis);
 });

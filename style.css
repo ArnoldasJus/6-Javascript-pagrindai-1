@@ -21,3 +21,8 @@ section p {
 #skaicius3 {
     margin-top: 5px;
 }
+
+label {
+    display: block;
+    margin-top: 5px;
+}
