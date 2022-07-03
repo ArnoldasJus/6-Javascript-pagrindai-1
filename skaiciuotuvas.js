@@ -5,6 +5,7 @@
 function valyti(){
     document.getElementById("skaicius1").value = "";
     document.getElementById("skaicius2").value = "";
+    document.getElementById("skaicius3").value = "";
     document.getElementById("papildoma_informacija").value = "";
 };
 
@@ -80,17 +81,36 @@ document.querySelector('#dalinti').addEventListener('click', function(){
 document.querySelector('#kuris_didziausias').addEventListener('click', function(){
     console.log('Kuris didziausias mygtukas paspaustas');
 
-    let skaicius1;
-    let skaicius2;
+    let skaicius1 = parseFloat(document.querySelector('#skaicius1').value);
+    let skaicius2 = parseFloat(document.querySelector('#skaicius2').value);
+    let skaicius3 = parseFloat(document.querySelector('#skaicius3').value);
+    let didziausias;
 
-    skaicius1 = parseFloat(document.querySelector('#skaicius1').value);
-    skaicius2 = parseFloat(document.querySelector('#skaicius2').value);
-
-    if (skaicius1>skaicius2) {
-       document.querySelector('#papildoma_informacija').value = "Skaičius 1 yra didesnis";
-    } else if(skaicius2>skaicius1) {
-        document.querySelector('#papildoma_informacija').value = "Skaičius 2 yra didesnis";
+    if(skaicius1 >= skaicius2 && skaicius1 >= skaicius3 ) {
+        didziausias = skaicius1;
+    } else if(skaicius2 >= skaicius1 && skaicius2 >= skaicius3){
+        didziausias = skaicius2;
     } else {
-      document.querySelector('#papildoma_informacija').value = "Skaičiai yra lygūs";
+        didziausias = skaicius3;
+    } 
+
+    document.querySelector('#papildoma_informacija').value = ('Didžiausias skaičius iš trijų yra ' + didziausias);
+
+});
+
+// Ar galima sudaryti trikampi?
+
+document.querySelector('#ar_trikampis').addEventListener('click', function(){
+    console.log('Ar trikampis mygtukas paspaustas');
+
+    let skaicius1 = parseFloat(document.querySelector('#skaicius1').value);
+    let skaicius2 = parseFloat(document.querySelector('#skaicius2').value);
+    let skaicius3 = parseFloat(document.querySelector('#skaicius3').value);
+
+    if(skaicius1 + skaicius2 > skaicius3 && skaicius1 + skaicius3 > skaicius2 && skaicius2 + skaicius3 > skaicius1) {
+        document.querySelector('#papildoma_informacija').value = ('Taip, toks trikampis gali egzistuoti');
+    } else {
+        document.querySelector('#papildoma_informacija').value = ('Ne, toks trikampis neegzistuoja');
     }
+
 });

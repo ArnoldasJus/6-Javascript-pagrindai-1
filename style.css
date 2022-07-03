@@ -12,3 +12,12 @@ section {
 #kuris_didziausias {
     margin-top: 5px;
 }
+
+section p {
+    margin-top: 5px;
+    display: inline;
+}
+
+#skaicius3 {
+    margin-top: 5px;
+}
