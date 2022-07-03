@@ -116,6 +116,4 @@ document.querySelector('#ar_trikampis').addEventListener('click', function(){
     } else {
         document.querySelector('#papildoma_informacija').value = ('Ne, toks trikampis neegzistuoja.');
     }
-    
-   // document.querySelector('#papildoma_informacija').value = (ar_trikampis + trikampio_rusis);
 });
