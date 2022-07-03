@@ -1,0 +1,14 @@
+section {
+    width: 50%;
+}
+
+.rezultatai {
+    width: 75%;
+    height: 21px;  
+    border: 1px solid black;
+    margin-top: 5px;
+}
+
+#kuris_didziausias {
+    margin-top: 5px;
+}
