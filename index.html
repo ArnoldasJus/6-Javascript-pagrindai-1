@@ -9,6 +9,7 @@
 <body>
     
 <section>
+    <h2>Skaičių apvertimas</h2>
     <div id="rezultatas">
         <table>
             <tr>
@@ -68,6 +69,24 @@
     </div>
 </section>
 
+<section>
+    <h2>Skaičiuotuvas</h2>
+    <div id="skaiciuotuvas">
+        <input id="skaicius1" type="number">
+        <input id="skaicius2" type="number">
+
+        <button id="sudeti">+</button>
+        <button id="atimti">—</button>
+        <button id="dauginti">x</button>
+        <button id="dalinti">/</button>
+
+        <button type="button" onclick="valyti();" id="valyti">C</button>
+
+        <div id="skaiciuotuvo_rezultatas" style="width: 300px; height: 21px;  border: 1px solid black; margin-top: 5px;" ></div>
+    </div>
+</section>
+
 <script src="skaiciu_apvertimas.js"></script>
+<script src="skaiciuotuvas.js"></script>
 </body>
 </html>
